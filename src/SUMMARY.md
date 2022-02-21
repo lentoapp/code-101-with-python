@@ -17,3 +17,7 @@
     - [Packages](./basic-development/packages.md)
     - [Methods and Functions](./basic-development/methods-functions.md)
     - [Project: HyperM](./basic-development/project-hyperm.md)
+    - [Project: BoxyBox](./basic-development/project-boxybox.md)
+- [About Classes](./classes-and-objects/README.md)
+    - [Classes and Objects](./classes-and-objects/classes-and-objects.md)
+    - [Final Project: Pong](./classes-and-objects/final-project-pong.md)
