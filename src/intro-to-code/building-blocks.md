@@ -87,7 +87,6 @@ while True:
 ```
 Yes.
 
-<<<<<<< HEAD
 ## Operators
 In languages and code, operators are symbols that tells the complier or interpreter (code reader) to perform an operation. For example, the "+" and "-" operators in Python will subtract or add integers. The "+" will also concatenate strings and lists. Below is a list of common operators in Python:
 
@@ -101,12 +100,3 @@ Like operators, keywords are words that tells the complier or interpreter (code 
 Functions are blocks of code that are run when they are called. For example, I can create a functions by definining, giving it a name, and writing parameters that the function accepts. Below, you write the program that the function executes. So, when the function is called, it does something to the parameters (data) according to whatever code you wrote. Functions are very useful, as you can create functions to use for various purpose. In this function, sum_it_all_up, you can see that my function takes two lists, breaks them down, and sums them both together and prints the sum. Note that the parameters aren't inherently related to lists in any way, I just treat the parameters like they are lists in my function. Therefore, if parametesr that are not list or are not all integers are passed in the function, an error from the pyhton interpreter will show up.
 
 Python has builtin functions that are very useful and perform basic tasks. Functions are very important in Python, and will help you manipulate data. Here are some fundamental functions for programming in python: 
-=======
-- [ ] Operators
-In languages and code, operators are symbols that tells the complier or interpreter (code reader) to perform an operation. For example, the "+" and "-" operators in Python will subtract or add integers. The 
-
-`==` \\( \rightarrow \\) test for equality
-
-- [ ] Keywords
-- [ ] Functions
->>>>>>> 60e104173ae06541646953b197c88132dd7e2bbf
