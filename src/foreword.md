@@ -9,11 +9,13 @@ Welcome to *Code 101 With Python*! This book is designed to get you up and runni
 3) Basic Development — delving more into packages and methods, as well as building two small projects together!
 4) About Classes — tackling a slightly more complex concept, classes, along with a build of Pong as our final project.
 
-These parts are intended to be tackled in order, especially if you've never written code before, so don't skip ahead without reading the previous chapters! We've tried to keep the information in here clean and concise, covering the essentials of how Python works and making sure you learn how to develop programs on your own.
+> 🚀 These parts are intended to be tackled in order, especially if you've never written code before, so don't skip ahead without reading the previous chapters! We've tried to keep the information in here clean and concise, covering the essentials of how Python works and making sure you learn how to develop programs on your own.
 
 ## About the Authors
-This book was written by two Python programmers, Nathan Yeung [(@ThatNerdSquared)](https://github.com/ThatNerdSquared) and Charlie Zhang [(@ragequit81)](https://github.com/ragequit81). We couldn't find a clear, freely-available guide on getting started with code and Python, so we decided to start this project. Feel free to contact us if you have questions, suggestions, or ideas!
+This book was written by two Python programmers, Nathan Yeung ([@ThatNerdSquared](https://github.com/ThatNerdSquared)) and Charlie Zhang ([@ragequit81](https://github.com/ragequit81)). We couldn't find a clear, freely-available guide on getting started with code and Python, so we decided to start this project. Feel free to contact us[^1] if you have questions, suggestions, or ideas!
 
 ---
 
 Ready to get started? Click the right arrow at the bottom of this page to move on to the first section: Intro To Code.
+
+[^1]: Open an issue on the [GitHub](https://github.com/lentoapp/code-101-with-python); if you don't know how to do this, we'll cover it in Chapter 2, so hang tight for now.
