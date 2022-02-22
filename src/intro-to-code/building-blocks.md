@@ -56,30 +56,108 @@ print(my_cool_number)  # output: 43
 ```
 
 ## Lists
-Lists are also a data structures that stores its data in an ordered way. They are used to store and group data in a list-like form. Lists are very useful if you want to collect or store data in a ordered way. Each item is a list is called a element. For example, if I had the variables nums, s1, and s2 in a list "data", print(data[0]) would print s1, print(data[1]) would print s2, print(data[2]), print(data[3]). Once we get into loops and function, you will be able to see more clearly how lists can be useful in collecting various types of data.
-
-- [ ] Dictionaries
-Dictionaries are a data structures that stores data in key value pairs. What does this mean? Instead of storing data in an order, dictionaries require a key for each piece of data put into it. For example, if I want to put the string "jeb" as a value in a dictionary, I would first have to make a key for it. Let's say this key is the string "reb". Ie: dict["reb"] = "jeb". Now, the useful thing with dictionaries is that its data can be instantly looked up. For example, if I wanted to access "jeb" in the dictionary, I can just write dict["reb"], as if I was look up a definiton in the dictionary. Dictionaries are not ordered.
-
-
-- [ ] If Statements
-If statements will execute code depending on whether it evaluates to a Boolean. A Boolean is a data type that is either True or False.
-
-If the if statement evaluates to True, it will execute the code it leads to.
-If the if statement evaluates to False, it will not execute the code it leads to.
-
-If statements can also lead to Elif and Else statements. For example, in this program, if this if statement is False, it will go to the elif statement. If this elif statement is False, it will go to the else statement.
-
-- [ ] Loops
-Loops will repeat a block of code over and over again. There are two types of loops, for loops and while loops. For loops repeat, or iterate, a block of code a certain number of times. In Python, for loops allow you to iterate (repeat) over data in the order that they appear in. For example, in this for loop, I am iterating over the "numbers" list, and n is each element in the "numbers" list in the order they appear in. for loops are very useful if you want to iterate over data, as you can access its elements and the loop ends once it has iterated over everything. In this for loop, I am iterating over the numbers list and accessing each element in "numbers" to add them up in the "sum" variable and printing them out.
-
-In while loops, it will keep on repeating the code under it as long as the condition you give the while loop is True. So, for example, if I say:
+Lists are a type of data structure that store data in an ordered way. They are used to store and group data in a list-like form. Lists are very useful if you want to collect or store data that needs to have a specific order.
 ```py
-while nums != 6:
-    nums += 1
+my_cool_list = ['this', 'is', 'a', 'list']
 ```
-The while loop will keep on repeating until nums does equal 6. When nums equals 6, the loop ends. 
-Now, you might ask, doesn't this mean that there are infinite while loops?
+Each item is a list is known as an **element**. Elements can be strings, integers, variables, etc. For example, if I had the variables `s0`, `s1`, and `s2` in a list called "data":
+```py
+s0 = "this is an element"
+s1 = "another element!"
+s2 = "yet again an element"
+data = [s0, s1, s2]
+```
+`print(data[0])` would print `s0`, `print(data[1])` would print `s1`, and `print(data[2])` would print `s2`.
+```py
+s0 = "this is an element"
+s1 = "another element!"
+s2 = "yet again an element"
+data = [s0, s1, s2]
+print(data[0])  # output: this is an element
+print(data[1])  # output: another element!
+print(data[2])  # output: yet again an element
+```
+Once we get into loops and functions, it'll be easier for you to see how lists can be useful for collecting various types of data.
+
+## Dictionaries
+Dictionaries are a data structures that stores data in key value pairs. What does this mean? Instead of storing data in an order, dictionaries require a key for each piece of data put into it. For example, if I want to put the string "jeb" as a value in a dictionary, I would first have to make a key for it. Let's say this key is the string "reb". As in, `my_cool_dictionary['reb'] = 'jeb'`.
+```py
+my_cool_dictionary = {
+    "a_cool_key": 'a cool value'
+}
+my_cool_dictionary['reb'] = 'jeb'
+print(my_cool_dictionary)
+# output:
+# 
+# my_cool_dictionary = {
+#     "a_cool_key": 'a cool value'
+#     "reb": 'jeb'
+# }
+```
+Now, the useful thing about dictionaries is that they allow you to instantly look up data. For example, if I wanted to access "jeb" in this dictionary, I can just write `dict["reb"]`, as if I was look up a definition in the dictionary.
+```py
+my_cool_dictionary = {
+    "a_cool_key": 'a cool value'
+    "reb": 'jeb'
+}
+print(my_cool_dictionary["reb"])  # output: jeb
+```
+However, as much as possible, you should try not to rely on dictionaries for values that should be ordered.
+
+## If Statements
+`if` statements execute code depending on the value of a specific Boolean. A Boolean is a data type that is either `True` or `False`.
+
+If the `if` statement evaluates a boolean to `True`, it will execute the code it leads to. However, if the `if` statement evaluates that boolean to `False`, it will not execute that code:
+```py
+are_pretzels_good = True
+if are_pretzels_good:
+    print("Agreed!")
+    # the above will get run because are_pretzels_good is set to True
+```
+`if` statements can also lead to `elif` and `else` statements. For example, in this program, if this `if` statement is False, the program will proceed to the `elif` statement. If this `elif` statement is False, it will go to the else statement.
+```py
+are_pretzels_good = False
+are_bananas_good = False
+if are_pretzels_good:
+    print("Agreed!")
+    # the above won't be run
+elif are_bananas_good:
+    print("Alright, fair.")
+    # the above won't be run
+else:
+    print("HERETIC")
+    # the above will be run because are_pretzels_good and are_bananas_good are set to False
+```
+
+## Loops
+Loops repeat a block of code over and over again. There are two types of loops, `for` loops and `while` loops. `for` loops repeat, or iterate, a block of code a certain number of times. In Python, they allow you to iterate (repeat) over data in the order that they appear in. For example, in this `for` loop, I am iterating over the `numbers` list, and `n` is each element in the `numbers` list in the order they appear in.
+```py
+numbers = [0, 1, 2, 3, 42]
+for n in numbers:
+    print(n)
+# output:
+# 0
+# 1
+# 2
+# 3
+# 42
+```
+`for` loops are very useful if you want to iterate over data, as you can access the necessary elements and the loop ends after it has iterated over each element once. In this `for` loop, I am iterating over the `numbers` list and accessing each element in `numbers` to add them up in the `sum` variable before printing it out.
+```py
+sum = 0
+numbers = [0, 1, 2, 3, 42]
+for n in numbers:
+    sum += n
+print(sum)  # output: 48
+```
+
+On the other hand, `while` loops keep on repeating their nested code as long as the condition you give them evaluates True. So, for example, if I say:
+```py
+nums = 0
+while nums != 6:
+    nums += 1  # this increases the value of nums each time
+```
+The `while` loop will keep on repeating until `nums` does equal 6. When `nums` equals 6, the loop ends. Now, you might ask, doesn't this mean that there are `while` loops that could be infinite?
 And the answer to that is:
 ```py
 while True:
