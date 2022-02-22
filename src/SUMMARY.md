@@ -4,7 +4,6 @@
 - [Intro to Code](./intro-to-code/README.md)
     - [Computing and Code](./intro-to-code/computing-and-code.md)
     - [Building Blocks](./intro-to-code/building-blocks.md)
-    - [Data Structures](./intro-to-code/data-structures.md)
     - [Exercises & Debugging](./intro-to-code/exercises-and-debugging.md)
     - [Miscellaneous: Beginner FAQ](./intro-to-code/miscellaneous.md)
     - [Conclusion](./intro-to-code/conclusion.md)
