@@ -14,8 +14,4 @@ Text editors that integrate these features are often referred to as IDEs, or Int
 
 > 💡 Features used to differentiate IDEs and text editors have changed over the years as text editors have become more advanced. In this book, we will refer to them mostly interchangeably, although depending on who you ask there are differences.
 
-## VSCode
-Visual Studio Code (VSCode for short) is the most popular IDE in the world, according to the [2021 Stack Overflow Developer Survey](https://insights.stackoverflow.com/survey/2021#section-most-popular-technologies-integrated-development-environment). We'll be using it in this book, as it is free, light on resources, and useful to beginners and veterans alike.
-
-- [ ] What are IDEs?
-- [ ] VSCode Intro
+In the next section, we'll talk more about the IDE we'll use in this book and get you set up for a basic project.

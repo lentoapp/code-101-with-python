@@ -9,6 +9,7 @@
     - [Conclusion](./intro-to-code/conclusion.md)
 - [Getting Started: Guessing Game](./guessing-game/README.md)
     - [IDEs](./guessing-game/ides.md)
+    - [Installing all The Things](./guessing-game/installing-all-the-things.md)
     - [Working with the Terminal](./guessing-game/working-with-terminal.md)
     - [Project: Guessing Game](./guessing-game/project-guessing-game.md)
 - [Intro to Development](./intro-to-development/README.md)
