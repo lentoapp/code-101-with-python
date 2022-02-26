@@ -21,17 +21,23 @@ VSCode is pretty intuitive (you can always search up "how to do X in VSCode") bu
 For now, you don't need to do anything with VSCode, unless you want to play with it a bit. We'll be using it more in the next section.
 
 ## Installing Python
-You'll also need to install Python so that you can actually run Python code on your computer! **You can find the latest version of Python [here](https://www.python.org/downloads/release/python-3102/) (find your OS at the bottom of the page)**. When you open up the installer, it should prompt you with some instructions and ask you to accept a license agreement before installing. There are also some OS-specific instructions for installing Python below.
+You'll also need to install Python so that you can actually run Python code on your computer! **You can find the latest version of Python [here](https://www.python.org/downloads/release/python-3102/) (find your OS at the bottom of the page: "Windows installer (64-bit)", "macOS 64-bit universal2 installer")**. When you open up the installer, it should prompt you with some instructions and ask you to accept a license agreement before installing. There are also some OS-specific instructions for installing Python below.
 
 > ⚠️  If you've already installed Python, make sure it is up-to-date so you can follow along with this guide. 3.10 or newer is preferred, although any version of Python newer than 3.8 should be fine. Check the OS-specific instructions as well so that you can make sure your Python install works as expected.
 
 
 ### Windows
+The Microsoft Store offers a version of Python 3; however, we don't recommend using it because of some edge-case compatibility issues. Use the install instructions provided above.
+
 On Windows, the Python installer should show a window like this:
 
 ![Python wizard on Windows](./assets/python-wizard-windows.png)
 
-It's important that you check the boxes exactly as shown in the pictures above as that will allow you to follow along with the book with no issues.
+It's important that you check the boxes exactly as shown in the pictures above as that will allow you to follow along with the book with no issues. Then, click the "Install Now" button to install Python!
+
+You'll also need to go into Settings and disable the Python options under **Manage Execution Aliases** (search "manage execution aliases" in Settings):
+
+![Windows aliases off](./assets/windows-aliases-off.png)
 
 ### macOS
 macOS actually comes with a version of Python; however, it's missing a few features and is usually not up to date, so we recommend installing it manually anyway.
