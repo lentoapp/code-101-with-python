@@ -14,6 +14,7 @@ data = {}
 correct_number = 88
 # This is also part of the FIFTH section. Concept to review: loops
 while number_of_guesses < 6:
+    number_of_guesses += 1
     # This is the SECOND section. Concepts to review: built-in functions
     guess = input('Guess a number between 1 and 100: ')
     print('Your guess was:')
@@ -36,6 +37,11 @@ while number_of_guesses < 6:
     data[guess] = hint
     print(data)
     if hint == 'Correct!':
+        print('=====')
+        print('CORRECT!')
+        print('=====')
+        print('Your guesses: ')
+        print(group_of_guesses)
         exit()
     ### FOR THE SIXTH SECTION, REFACTOR THE ABOVE INTO A FUNCTION ###
 
@@ -44,3 +50,5 @@ while number_of_guesses < 6:
 # This is also part of the FIRST section. Concepts to review: vars, strs, ints
 print('The correct number is: ')
 print(correct_number)
+print('Your guesses: ')
+print(group_of_guesses)
