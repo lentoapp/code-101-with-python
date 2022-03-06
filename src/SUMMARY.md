@@ -17,7 +17,7 @@
     - [Git Basics](./intro-to-development/git-basics.md)
     - [Miscellaneous](./intro-to-development/miscellaneous.md)
 - [Basic Development](./basic-development/README.md)
-    - [Packages](./basic-development/packages.md)
+    - [Packages and Modules](./basic-development/packs_and_mods.md)
     - [Methods and Functions](./basic-development/methods-functions.md)
     - [Project: HyperM](./basic-development/project-hyperm.md)
     - [Project: BoxyBox](./basic-development/project-boxybox.md)
