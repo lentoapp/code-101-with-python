@@ -26,6 +26,7 @@ Now, if we play through the game again, you will see that the numbers generated 
 
 
 If you want to know more about what functions the random module has, you can find it by searching up “random module python.” Here are some useful functions that you can play around with:
+
 ```py 
 >>> random() # Generates random float (decimal number)
 0.37444887175646646
@@ -57,26 +58,26 @@ When you're working on code projects, you may install various program, such as a
 
 First, you should make a folder with your guessing_game.py. Next, in the folder, type:
 
-```py
+```bash
 python3 -m venv .venv
 ```
-Great! You've just made a venv with the file name ```.venv```
+Great! You've just made a venv with the file name `.venv`.
 
 Next, activate your venv by typing:
 
-```py
+```bash
 source .venv/bin/activate 
 ```
 Now you're all set to install packages and programs for your projects. To turn off your venv, simply type:
 
-```py
+```bash
 deactivate
 ```
 For the rest of this project, though, don't deactivate your venv just yet. 
 
 Now that you have a venv, let’s install the ```art``` package to display a few graphics on our game. In every language, there is usually a package installer to help install and manage your packages with that language. In Python, the package installer is called pip. So, to install the art package with pip, type in pip install art in your terminal.
 
-```py
+```bash
 pip install art
 ```
 ![](assets/art.png)
@@ -97,22 +98,28 @@ One function that is pretty useful is the tprint() function. tprint accepts two 
 from art import art, tprint
 tprint("Welcome to my game!", font = bulbhead)
 ```
-![](assets/bulb.png)
 
+![](assets/bulb.png)
 
 Another useful function is the art() function. It will print an emoji in your terminal. The parameters this function accepts is an emoji name as a string.
 For example, here is a coffee emoji:
+
 ```py
 from art import art, tprint
 joe = art("coffee")
 print(joe)
 ```
+
 ![](assets/joe1.png)
+
 If I wanted to have 2 coffee emojis next to each other, I can also put in 2 as a second parameter in the art() function.
+
 ```py
 from art import art, tprint
 joe = art("coffee", 2)
 print(joe)
 ```
+
 ![](assets/joe.png)
+
 And that's how you use Packages, Modules and their functions in Python. Up next, a project!
