@@ -1,26 +1,26 @@
 deck = {
-	"if statement": 'way of checking whether a condition is true or false',
-	"function": 'method for splitting code into another section for easy reuse',
-	"list": 'a group of items (elements) organized by order from 0 to n'
+    'un cinéma': 'a movie theatre',
+    'un musée': 'a museum',
+    'un théâtre': 'a theatre'
 }
 
 for question in deck:
     user_input = input(question + ': ')
     if user_input == deck[question]:
-    	print('Correct!')
+        print('Correct!')
     else:
-    	print('Incorrect!')
-    	print('The correct answer is: ' + deck[question])
+        print('Incorrect!')
+        print('The correct answer is: ' + deck[question])
     print('---')
 
 # output:
-# if statement: way of checking whether a condition is true or false
+# un cinéma: idk
+# Incorrect!
+# The correct answer is: a movie theatre
+# ---
+# un musée: a museum
 # Correct!
 # ---
-# function: idk
-# Incorrect!
-# The correct answer is: method for splitting code into another section for easy reuse
-# ---
-# list: a group of items (elements) organized by order from 0 to n
+# un théâtre: a theatre
 # Correct!
 # ---

@@ -1,22 +1,23 @@
 # Project: HyperM
 
 ## Introducing HyperM
-Now that you've learned about packages and modules, let's dive into building another project: HyperM! Short for *hypermnesia*, a word meaning "exact recall", HyperM is a small Python script that helps you learn through digital flashcards. Just like flashcards, HyperM takes in a list of cards with "fronts" (questions) and "backs" (answers), and prompts you with each question. If you get a question wrong, it prints out the correct answer and adds the question somewhere in the deck for you to come across again later. If you get a question right, the question is removed from the deck. When you get all the questions right, the review is complete, and HyperM congratulates you.
+Now that you've learned about packages and modules, let's dive into building another project: HyperM! Short for *hypermnesia*, a word meaning "exact recall", HyperM is a small Python script that helps you learn through digital flashcards. Just like flashcards, HyperM takes a list of cards with "fronts" (questions) and "backs" (answers), and prompts you with each question. If you get a question wrong, it prints out the correct answer and adds the question somewhere in the deck for you to come across again later. If you get a question right, the question is removed from the deck. Once you get all the questions right, the review is complete, and HyperM congratulates you.
 
-Here's a GIF of how it looks like in action:
+Here's a short video of how it looks like in action:
+<script id="asciicast-wy0jUFf2E2e9VlV345mbdh581" src="https://asciinema.org/a/wy0jUFf2E2e9VlV345mbdh581.js" async></script>
 
 ## The Spec
-When building a project, it's important to think about the **specification, also called the spec:** the list of features and requirements for the project to be considered complete.
+When building a project, it's important to think about the **specification, also called the spec:** the list of features and requirements for the project.
 
-> 💡 It's important to make a spec before you work on a project, because you don't want to start coding and then realize you forgot about something major. 
+> 💡 It's important to make a spec before you work on a project, because you don't want to start coding and then realize you forgot about something major.
 > 
-> Depending on the project, devs make specs with different levels of formality. For a basic flashcards script, a casual back-of-the-napkin bullet point list usually does the job. For larger apps with multiple teams of developers, specs can become hundreds of pages long, hammered out in meetings with complex diagrams. 
+> Depending on the project, devs make specs with different levels of formality. For a basic flashcards script, a casual back-of-the-napkin bullet point list usually does the job. For larger apps with multiple teams of developers, specs can become [hundreds of pages long](https://www.fastcompany.com/28121/they-write-right-stuff), hammered out in meetings with complex diagrams. 
 > 
 > Since this is your first project where you'll be writing code independently, we'll be working through a detailed spec together so you get an idea of the exact thought process.
 
 Let's think about what requirements there are for HyperM:
 
-- There needs to be some way to set a "deck" of flashcards, and easily swap between different ones (so that you can swap betwen reviewing different things)
+- There needs to be some way to set a "deck" of flashcards
 - There needs to be a way of prompting the user with a question
 - There needs to be a way of checking whether the user answered said question correctly
 - There needs to be a way to insert a "card" back into the deck if the user answered the question incorrectly
@@ -27,86 +28,31 @@ As we can see, even for something like a small flashcards script, there are quit
 ## Design and Architecture
 After making a spec, the next step in the process is figuring out how to actually implement it. Let's work through each item in the spec and think about how to actually create it (how to best add it to the app's **architecture**):
 
-> - There needs to be some way to set a "deck" of flashcards, and easily swap between different ones (so that you can swap betwen reviewing different things)
-
-There are a few parts of this that need to be considered carefully. The first is that the decks cannot be coded directly into the Python file, as there needs to be a way for users to swap between different decks, as well as design their own. Therefore, we need to have a way to store the flashcards data outside of the code itself.
-
-To do this, we're going to store each flashcards deck as a **CSV** file. CSV stands for **comma-seperated values**, and it means pretty much what it says.
+> - There needs to be some way to set a "deck" of flashcards
 
 Consider this table:
 
 | Term | Definition |
-|------|------------|
-| if statement | way of checking whether a condition is true or false |
-| function | method for splitting code into another section for easy reuse |
-| list | a group of items (elements) organized by order from 0 to n |
+|:----:|:----------:|
+| un cinéma | a movie theatre |
+| un musée | a museum |
+| un parc d'attractions | an amusement park |
+| un théâtre | a theatre |
 
-In CSV format, the above table would look like:
-
-```csv
-Term,Definition
-if statement,way of checking whether a condition is true or false
-function,method for splitting code into another section for easy reuse
-list,a group of items (elements) organized by order from 0 to n
-```
-
-Essentially, you can think about CSVs as tables, where the columns are seperated using commas and the rows are seperated using lines.
-
-For our use, the CSV file will look much like the table above: we'll create a CSV file per deck where the first column holds the questions and the second column holds the answers, much like the table shown above with Python terms. Python allows us to read and write to CSV files using the `csv` module in the standard library:
-
-```py
-import csv
-
-deck_in_progress = {
-	"Term": 'Definition',
-	"if statement": 'way of checking whether a condition is true or false',
-	"function": 'method for splitting code into another section for easy reuse',
-	"list": 'a group of items (elements) organized by order from 0 to n'
-}
-
-myfile = open('myfile.csv', 'w', encoding='UTF-8')
-writer = csv.writer(myfile)
-for question in deck_in_progress:
-    writer.writerow([question, deck_in_progress[question]])
-myfile.close()
-
-```
-
-If we were to open up `myfile.csv`, we'd see a text file matching the CSV format shown above.
-
-> 📖 Here, we're using Python's built in `open()` function to open a file for use. In this case, we're opening `myfile.csv` for writing (which also creates it if it doesn't exist already). Later, we'll be opening up the CSV file again to read it back. You can find out more about the `open()` function [here](https://www.geeksforgeeks.org/python-open-function/).
-
-When we load a deck to use it in Python, we can also think of it as a dictionary. If you remember from [Chapter 1](../intro-to-code/building-blocks.md#dictionaries), we can use dictionaries to represent key-value pairs, which is exactly what a deck is.
+You can think about a deck of flashcards as a table: for each card, one side is the question, while one side is the answer. So, to create flashcards in Python, we just need a simple way to represent a group of question-answer pairs. If you remember from [Chapter 1](../intro-to-code/building-blocks.md#dictionaries), we can use dictionaries to represent key-value pairs, which fits our use case: the keys can be the questions, and the values can be the answers.
 
 Here's the table above again, this time represented as a Python dictionary:
 
 ```py
 {
-	'Term': 'Definition',
-	'if statement': 'way of checking whether a condition is true or false',
-	'function': 'method for splitting code into another section for easy reuse',
-	'list': 'a group of items (elements) organized by order from 0 to n'
+    'Term': 'Definition',
+    'un cinéma': 'a movie theatre',
+    'un musée': 'a museum',
+    'un théâtre': 'a theatre'
 }
 ```
 
-Here's an example of how we would read the deck from a CSV file on the user's computer (`myfile.csv`) and then load it as a dictionary (`deck_to_use`):
-
-```py
-myfile = open('myfile.csv', 'r', encoding='UTF-8')
-reader = csv.reader(myfile)
-
-deck_to_use = {}
-for row in reader:
-    deck_to_use[row[0]] = row[1]
-
-myfile.close()
-
-print(deck_to_use)
-# output:
-# {'Term': 'Definition', 'if statement': 'way of checking whether a condition is true or false', 'function': 'method for splitting code into another section for easy reuse', 'list': 'a group of items (elements) organized by order from 0 to n'}
-```
-
-**Takeaway:** when we're not using decks, we can store them as CSV files on the user's computer. When we're using a specific deck, we can load it into Python using the `csv` module and work with it as a dictionary.
+**Takeaway:** We can store flashcard decks as dictionaries in Python, where the key is the question and the value is the answer.
 
 > - There needs to be a way of prompting the user with a question
 
@@ -124,36 +70,36 @@ If we have a dictionary of questions, this is also fairly easy. We can use a [fo
 
 ```py
 deck = {
-	"if statement": 'way of checking whether a condition is true or false',
-	"function": 'method for splitting code into another section for easy reuse',
-	"list": 'a group of items (elements) organized by order from 0 to n'
+    'un cinéma': 'a movie theatre',
+    'un musée': 'a museum',
+    'un théâtre': 'a theatre'
 }
 
 for question in deck:
     user_input = input(question + ': ')
     print(user_input)
-    
+
 # output:
-# if statement: I typed this input
-# I typed this input
-# function: I typed this too
+# un cinéma: here is some input I typed
+# here is some input I typed
+# un musée: here is some more input I typed
+# here is some more input I typed
+# un théâtre: I typed this too
 # I typed this too
-# list: And I also typed this
-# And I also typed this
 ```
 
 **Takeaway:** we can use the built-in `input()` function in Python to prompt the user to give an answer to a question.
 
 > - There needs to be a way of checking whether the user answered said question correctly
 
-Remember, at this point, we have all the questions and answers in a dictionary that we read from the CSV file:
+Remember, we're going to store all of the questions and answers in a dictionary,
+where the keys are the questions and the values are the answers:
 
 ```py
-{
-	'Term': 'Definition',
-	'if statement': 'way of checking whether a condition is true or false',
-	'function': 'method for splitting code into another section for easy reuse',
-	'list': 'a group of items (elements) organized by order from 0 to n'
+deck = {
+    'un cinéma': 'a movie theatre',
+    'un musée': 'a museum',
+    'un théâtre': 'a theatre'
 }
 ```
 
@@ -178,9 +124,9 @@ We can combine this `if` statement check with the ability to look up a value in 
 
 ```py
 deck = {
-	"if statement": 'way of checking whether a condition is true or false',
-	"function": 'method for splitting code into another section for easy reuse',
-	"list": 'a group of items (elements) organized by order from 0 to n'
+    'un cinéma': 'a movie theatre',
+    'un musée': 'a museum',
+    'un théâtre': 'a theatre'
 }
 
 for question in deck:
@@ -193,25 +139,94 @@ for question in deck:
     print('---')
 
 # output:
-# if statement: way of checking whether a condition is true or false
+# un cinéma: idk
+# Incorrect!
+# The correct answer is: a movie theatre
+# ---
+# un musée: a museum
 # Correct!
 # ---
-# function: idk
-# Incorrect!
-# The correct answer is: method for splitting code into another section for easy reuse
-# ---
-# list: a group of items (elements) organized by order from 0 to n
+# un théâtre: a theatre
 # Correct!
 # ---
 ```
 
-**Takeaway:**
+**Takeaway:** we can use `if` statements to check whether a user's answers are correct or not, and we can combine them with dictionaries to check answers for each individual question.
 
 > - There needs to be a way to insert a "card" back into the deck if the user answered the question incorrectly
 
+If you remember [our discussion on the `random` package](https://lentoapp.github.io/code-101-with-python/basic-development/packages-and-modules.html#packages-and-modules) from Chapter 3 and [lists](https://lentoapp.github.io/code-101-with-python/intro-to-code/building-blocks.html#lists) from Chapter 1, you might already have some ideas on how we can implement this functionality.
 
+To randomly insert an item back into the deck at some point, we can:
+- create a list of questions from the dictionary's keys (we can use a function called `.keys()` to get the questions, and `list()` to turn it into a list)
+- randomly pick indexes that are after the current card in the deck
+- insert the question back into the list at that random index if the answer is incorrect
 
+Here's an example of how that might look like:
+```py
+import random
 
-- [ ] Introducing Hyperm
-- [ ] Explain how it works/how to build
-- [ ] Push to git 
+deck = {
+    'un cinéma': 'a movie theatre',
+    'un musée': 'a museum',
+    'un théâtre': 'a theatre'
+}
+
+list_of_questions = list(deck.keys())
+
+current_index = 0
+for question in list_of_questions:
+    user_input = input(question + ': ')
+    if user_input == deck[question]:
+        print('Correct!')
+    else:
+        print('Incorrect!')
+        print('The correct answer is: ' + deck[question])
+        insert_point = random.randint(current_index+1, len(list_of_questions)+1)
+        list_of_questions.insert(insert_point, question)
+    print(list_of_questions)
+    print('---')
+    current_index += 1
+
+# output:
+# un cinéma: not sure
+# Incorrect!
+# The correct answer is: a movie theatre
+# ['un cinéma', 'un musée', 'un cinéma', 'un théâtre']
+# ---
+# un musée: not sure tbh
+# Incorrect!
+# The correct answer is: a museum
+# ['un cinéma', 'un musée', 'un cinéma', 'un théâtre', 'un musée']
+# ---
+# un cinéma: a movie theatre
+# Correct!
+# ['un cinéma', 'un musée', 'un cinéma', 'un théâtre', 'un musée']
+# ---
+# un théâtre: idk
+# Incorrect!
+# The correct answer is: a theatre
+# ['un cinéma', 'un musée', 'un cinéma', 'un théâtre', 'un musée', 'un théâtre']
+# ---
+# un musée: a museum
+# Correct!
+# ['un cinéma', 'un musée', 'un cinéma', 'un théâtre', 'un musée', 'un théâtre']
+# ---
+# un théâtre: a theatre
+# Correct!
+# ['un cinéma', 'un musée', 'un cinéma', 'un théâtre', 'un musée', 'un théâtre']
+# ---
+```
+
+This is a more complex example, but don't get overwhelmed! Take some time and make sure you understand how we got each part of the code.
+
+**Takeaway:** We can use a list of the questions, the `random` package, and the `randint()` function to randomly insert a card at some point in the deck for further review later.
+
+> - There needs to be a way to show a congratulation message when the review is done
+
+Last but not least, we have the congratulations message! After the previous steps, this should be pretty simple, but here are two hints:
+- `print()`
+- Where do you need to put the print statement so that it runs after your code finishes **loop**ing over all the cards?
+
+## Conclusion
+Congratulations! By now, you've read through a detailed spec of the project and you're ready to fully implement it on your own. Good luck, and feel free to reach out if you have any questions.
