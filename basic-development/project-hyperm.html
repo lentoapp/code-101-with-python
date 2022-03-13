@@ -1,0 +1,391 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Project: HyperM - Code 101 With Python</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../foreword.html">Foreword</a></li><li class="chapter-item expanded "><a href="../intro-to-code/index.html"><strong aria-hidden="true">1.</strong> Intro to Code</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../intro-to-code/computing-and-code.html"><strong aria-hidden="true">1.1.</strong> Computing and Code</a></li><li class="chapter-item expanded "><a href="../intro-to-code/building-blocks.html"><strong aria-hidden="true">1.2.</strong> Building Blocks</a></li><li class="chapter-item expanded "><a href="../intro-to-code/exercises-and-debugging.html"><strong aria-hidden="true">1.3.</strong> Exercises &amp; Debugging</a></li><li class="chapter-item expanded "><a href="../intro-to-code/miscellaneous.html"><strong aria-hidden="true">1.4.</strong> Miscellaneous: Beginner FAQ</a></li><li class="chapter-item expanded "><a href="../intro-to-code/conclusion.html"><strong aria-hidden="true">1.5.</strong> Conclusion</a></li></ol></li><li class="chapter-item expanded "><a href="../guessing-game/index.html"><strong aria-hidden="true">2.</strong> Getting Started: Guessing Game</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../guessing-game/ides.html"><strong aria-hidden="true">2.1.</strong> IDEs</a></li><li class="chapter-item expanded "><a href="../guessing-game/installing-all-the-things.html"><strong aria-hidden="true">2.2.</strong> Installing all The Things</a></li><li class="chapter-item expanded "><a href="../guessing-game/working-with-terminal.html"><strong aria-hidden="true">2.3.</strong> Working with the Terminal</a></li><li class="chapter-item expanded "><a href="../guessing-game/project-guessing-game.html"><strong aria-hidden="true">2.4.</strong> Project: Guessing Game</a></li></ol></li><li class="chapter-item expanded "><a href="../basic-development/index.html"><strong aria-hidden="true">3.</strong> Intro to Development</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../basic-development/packages-and-modules.html"><strong aria-hidden="true">3.1.</strong> Packages and Modules</a></li><li class="chapter-item expanded "><a href="../basic-development/project-hyperm.html" class="active"><strong aria-hidden="true">3.2.</strong> Project: HyperM</a></li></ol></li><li class="chapter-item expanded "><a href="../classes-and-objects/index.html"><strong aria-hidden="true">4.</strong> About Classes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../classes-and-objects/classes-and-objects.html"><strong aria-hidden="true">4.1.</strong> Classes and Objects</a></li><li class="chapter-item expanded "><a href="../classes-and-objects/final-project-pong.html"><strong aria-hidden="true">4.2.</strong> Final Project: Pong</a></li></ol></li><li class="chapter-item expanded "><a href="../appendix/index.html"><strong aria-hidden="true">5.</strong> Appendix</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../appendix/git-basics.html"><strong aria-hidden="true">5.1.</strong> Git Basics</a></li><li class="chapter-item expanded "><a href="../appendix/exercises.html"><strong aria-hidden="true">5.2.</strong> More Exercises</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Code 101 With Python</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="project-hyperm"><a class="header" href="#project-hyperm">Project: HyperM</a></h1>
+<h2 id="introducing-hyperm"><a class="header" href="#introducing-hyperm">Introducing HyperM</a></h2>
+<p>Now that you've learned about packages and modules, let's dive into building another project: HyperM! Short for <em>hypermnesia</em>, a word meaning &quot;exact recall&quot;, HyperM is a small Python script that helps you learn through digital flashcards. Just like flashcards, HyperM takes a list of cards with &quot;fronts&quot; (questions) and &quot;backs&quot; (answers), and prompts you with each question. If you get a question wrong, it prints out the correct answer and adds the question somewhere in the deck for you to come across again later. If you get a question right, the question is removed from the deck. Once you get all the questions right, the review is complete, and HyperM congratulates you.</p>
+<p>Here's a short video of how it looks like in action:</p>
+<script id="asciicast-wy0jUFf2E2e9VlV345mbdh581" src="https://asciinema.org/a/wy0jUFf2E2e9VlV345mbdh581.js" async></script>
+<h2 id="the-spec"><a class="header" href="#the-spec">The Spec</a></h2>
+<p>When building a project, it's important to think about the <strong>specification, also called the spec:</strong> the list of features and requirements for the project.</p>
+<blockquote>
+<p>💡 It's important to make a spec before you work on a project, because you don't want to start coding and then realize you forgot about something major.</p>
+<p>Depending on the project, devs make specs with different levels of formality. For a basic flashcards script, a casual back-of-the-napkin bullet point list usually does the job. For larger apps with multiple teams of developers, specs can become <a href="https://www.fastcompany.com/28121/they-write-right-stuff">hundreds of pages long</a>, hammered out in meetings with complex diagrams. </p>
+<p>Since this is your first project where you'll be writing code independently, we'll be working through a detailed spec together so you get an idea of the exact thought process.</p>
+</blockquote>
+<p>Let's think about what requirements there are for HyperM:</p>
+<ul>
+<li>There needs to be some way to set a &quot;deck&quot; of flashcards</li>
+<li>There needs to be a way of prompting the user with a question</li>
+<li>There needs to be a way of checking whether the user answered said question correctly</li>
+<li>There needs to be a way to insert a &quot;card&quot; back into the deck if the user answered the question incorrectly</li>
+<li>There needs to be a way to show a congratulation message when the review is done</li>
+</ul>
+<p>As we can see, even for something like a small flashcards script, there are quite a few things to consider.</p>
+<h2 id="design-and-architecture"><a class="header" href="#design-and-architecture">Design and Architecture</a></h2>
+<p>After making a spec, the next step in the process is figuring out how to actually implement it. Let's work through each item in the spec and think about how to actually create it (how to best add it to the app's <strong>architecture</strong>):</p>
+<blockquote>
+<ul>
+<li>There needs to be some way to set a &quot;deck&quot; of flashcards</li>
+</ul>
+</blockquote>
+<p>Consider this table:</p>
+<table><thead><tr><th align="center">Term</th><th align="center">Definition</th></tr></thead><tbody>
+<tr><td align="center">un cinéma</td><td align="center">a movie theatre</td></tr>
+<tr><td align="center">un musée</td><td align="center">a museum</td></tr>
+<tr><td align="center">un parc d'attractions</td><td align="center">an amusement park</td></tr>
+<tr><td align="center">un théâtre</td><td align="center">a theatre</td></tr>
+</tbody></table>
+<p>You can think about a deck of flashcards as a table: for each card, one side is the question, while one side is the answer. So, to create flashcards in Python, we just need a simple way to represent a group of question-answer pairs. If you remember from <a href="../intro-to-code/building-blocks.html#dictionaries">Chapter 1</a>, we can use dictionaries to represent key-value pairs, which fits our use case: the keys can be the questions, and the values can be the answers.</p>
+<p>Here's the table above again, this time represented as a Python dictionary:</p>
+<pre><code class="language-py">{
+    'Term': 'Definition',
+    'un cinéma': 'a movie theatre',
+    'un musée': 'a museum',
+    'un théâtre': 'a theatre'
+}
+</code></pre>
+<p><strong>Takeaway:</strong> We can store flashcard decks as dictionaries in Python, where the key is the question and the value is the answer.</p>
+<blockquote>
+<ul>
+<li>There needs to be a way of prompting the user with a question</li>
+</ul>
+</blockquote>
+<p>This is pretty easy using Python's built-in <code>input()</code> function. We can ask for the user to input a string of text like this:</p>
+<pre><code class="language-py">&gt;&gt;&gt; user_input = input('Give me some input: ')
+Give me some input: I typed this sample input here
+&gt;&gt;&gt; print(user_input)
+I typed this sample input here
+&gt;&gt;&gt; 
+</code></pre>
+<p>If we have a dictionary of questions, this is also fairly easy. We can use a <a href="../intro-to-code/building-blocks.html#loops">for loop</a> to loop over each question-answer pair in the dictionary and prompt the user with the question:</p>
+<pre><code class="language-py">deck = {
+    'un cinéma': 'a movie theatre',
+    'un musée': 'a museum',
+    'un théâtre': 'a theatre'
+}
+
+for question in deck:
+    user_input = input(question + ': ')
+    print(user_input)
+
+# output:
+# un cinéma: here is some input I typed
+# here is some input I typed
+# un musée: here is some more input I typed
+# here is some more input I typed
+# un théâtre: I typed this too
+# I typed this too
+</code></pre>
+<p><strong>Takeaway:</strong> we can use the built-in <code>input()</code> function in Python to prompt the user to give an answer to a question.</p>
+<blockquote>
+<ul>
+<li>There needs to be a way of checking whether the user answered said question correctly</li>
+</ul>
+</blockquote>
+<p>Remember, we're going to store all of the questions and answers in a dictionary,
+where the keys are the questions and the values are the answers:</p>
+<pre><code class="language-py">deck = {
+    'un cinéma': 'a movie theatre',
+    'un musée': 'a museum',
+    'un théâtre': 'a theatre'
+}
+</code></pre>
+<p>Using this, it becomes fairly easy to check whether an answer is correct. In Chapter 1, we covered <a href="../intro-to-code/building-blocks.html#if-statements">if statements</a>, which we can use to compare strings:</p>
+<pre><code class="language-py">answer = 'Python is awesome!'
+user_input = input('Is Python awesome? ')
+print('---')
+if answer == user_input:
+    print('YAS')
+else:
+    print('awww :(')
+
+# output:
+# Is Python awesome? Python is awesome!
+# ---
+# YAS
+</code></pre>
+<p>We can combine this <code>if</code> statement check with the ability to look up a value in a dictionary to ask multiple questions and mark them as <strong>correct</strong> or <strong>incorrect</strong> depending on the answer in the dictionary:</p>
+<pre><code class="language-py">deck = {
+    'un cinéma': 'a movie theatre',
+    'un musée': 'a museum',
+    'un théâtre': 'a theatre'
+}
+
+for question in deck:
+    user_input = input(question + ': ')
+    if user_input == deck[question]:
+    	print('Correct!')
+    else:
+    	print('Incorrect!')
+    	print('The correct answer is: ' + deck[question])
+    print('---')
+
+# output:
+# un cinéma: idk
+# Incorrect!
+# The correct answer is: a movie theatre
+# ---
+# un musée: a museum
+# Correct!
+# ---
+# un théâtre: a theatre
+# Correct!
+# ---
+</code></pre>
+<p><strong>Takeaway:</strong> we can use <code>if</code> statements to check whether a user's answers are correct or not, and we can combine them with dictionaries to check answers for each individual question.</p>
+<blockquote>
+<ul>
+<li>There needs to be a way to insert a &quot;card&quot; back into the deck if the user answered the question incorrectly</li>
+</ul>
+</blockquote>
+<p>If you remember <a href="https://lentoapp.github.io/code-101-with-python/basic-development/packages-and-modules.html#packages-and-modules">our discussion on the <code>random</code> package</a> from Chapter 3 and <a href="https://lentoapp.github.io/code-101-with-python/intro-to-code/building-blocks.html#lists">lists</a> from Chapter 1, you might already have some ideas on how we can implement this functionality.</p>
+<p>To randomly insert an item back into the deck at some point, we can:</p>
+<ul>
+<li>create a list of questions from the dictionary's keys (we can use a function called <code>.keys()</code> to get the questions, and <code>list()</code> to turn it into a list)</li>
+<li>randomly pick indexes that are after the current card in the deck</li>
+<li>insert the question back into the list at that random index if the answer is incorrect</li>
+</ul>
+<p>Here's an example of how that might look like:</p>
+<pre><code class="language-py">import random
+
+deck = {
+    'un cinéma': 'a movie theatre',
+    'un musée': 'a museum',
+    'un théâtre': 'a theatre'
+}
+
+list_of_questions = list(deck.keys())
+
+current_index = 0
+for question in list_of_questions:
+    user_input = input(question + ': ')
+    if user_input == deck[question]:
+        print('Correct!')
+    else:
+        print('Incorrect!')
+        print('The correct answer is: ' + deck[question])
+        insert_point = random.randint(current_index+1, len(list_of_questions)+1)
+        list_of_questions.insert(insert_point, question)
+    print(list_of_questions)
+    print('---')
+    current_index += 1
+
+# output:
+# un cinéma: not sure
+# Incorrect!
+# The correct answer is: a movie theatre
+# ['un cinéma', 'un musée', 'un cinéma', 'un théâtre']
+# ---
+# un musée: not sure tbh
+# Incorrect!
+# The correct answer is: a museum
+# ['un cinéma', 'un musée', 'un cinéma', 'un théâtre', 'un musée']
+# ---
+# un cinéma: a movie theatre
+# Correct!
+# ['un cinéma', 'un musée', 'un cinéma', 'un théâtre', 'un musée']
+# ---
+# un théâtre: idk
+# Incorrect!
+# The correct answer is: a theatre
+# ['un cinéma', 'un musée', 'un cinéma', 'un théâtre', 'un musée', 'un théâtre']
+# ---
+# un musée: a museum
+# Correct!
+# ['un cinéma', 'un musée', 'un cinéma', 'un théâtre', 'un musée', 'un théâtre']
+# ---
+# un théâtre: a theatre
+# Correct!
+# ['un cinéma', 'un musée', 'un cinéma', 'un théâtre', 'un musée', 'un théâtre']
+# ---
+</code></pre>
+<p>This is a more complex example, but don't get overwhelmed! Take some time and make sure you understand how we got each part of the code.</p>
+<p><strong>Takeaway:</strong> We can use a list of the questions, the <code>random</code> package, and the <code>randint()</code> function to randomly insert a card at some point in the deck for further review later.</p>
+<blockquote>
+<ul>
+<li>There needs to be a way to show a congratulation message when the review is done</li>
+</ul>
+</blockquote>
+<p>Last but not least, we have the congratulations message! After the previous steps, this should be pretty simple, but here are two hints:</p>
+<ul>
+<li><code>print()</code></li>
+<li>Where do you need to put the print statement so that it runs after your code finishes <strong>loop</strong>ing over all the cards?</li>
+</ul>
+<h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
+<p>Congratulations! By now, you've read through a detailed spec of the project and you're ready to fully implement it on your own. Good luck, and feel free to reach out if you have any questions.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../basic-development/packages-and-modules.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../classes-and-objects/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../basic-development/packages-and-modules.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../classes-and-objects/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

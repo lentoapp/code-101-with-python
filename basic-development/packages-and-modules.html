@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Packages and Modules - Code 101 With Python</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../foreword.html">Foreword</a></li><li class="chapter-item expanded "><a href="../intro-to-code/index.html"><strong aria-hidden="true">1.</strong> Intro to Code</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../intro-to-code/computing-and-code.html"><strong aria-hidden="true">1.1.</strong> Computing and Code</a></li><li class="chapter-item expanded "><a href="../intro-to-code/building-blocks.html"><strong aria-hidden="true">1.2.</strong> Building Blocks</a></li><li class="chapter-item expanded "><a href="../intro-to-code/exercises-and-debugging.html"><strong aria-hidden="true">1.3.</strong> Exercises &amp; Debugging</a></li><li class="chapter-item expanded "><a href="../intro-to-code/miscellaneous.html"><strong aria-hidden="true">1.4.</strong> Miscellaneous: Beginner FAQ</a></li><li class="chapter-item expanded "><a href="../intro-to-code/conclusion.html"><strong aria-hidden="true">1.5.</strong> Conclusion</a></li></ol></li><li class="chapter-item expanded "><a href="../guessing-game/index.html"><strong aria-hidden="true">2.</strong> Getting Started: Guessing Game</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../guessing-game/ides.html"><strong aria-hidden="true">2.1.</strong> IDEs</a></li><li class="chapter-item expanded "><a href="../guessing-game/installing-all-the-things.html"><strong aria-hidden="true">2.2.</strong> Installing all The Things</a></li><li class="chapter-item expanded "><a href="../guessing-game/working-with-terminal.html"><strong aria-hidden="true">2.3.</strong> Working with the Terminal</a></li><li class="chapter-item expanded "><a href="../guessing-game/project-guessing-game.html"><strong aria-hidden="true">2.4.</strong> Project: Guessing Game</a></li></ol></li><li class="chapter-item expanded "><a href="../basic-development/index.html"><strong aria-hidden="true">3.</strong> Intro to Development</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../basic-development/packages-and-modules.html" class="active"><strong aria-hidden="true">3.1.</strong> Packages and Modules</a></li><li class="chapter-item expanded "><a href="../basic-development/project-hyperm.html"><strong aria-hidden="true">3.2.</strong> Project: HyperM</a></li></ol></li><li class="chapter-item expanded "><a href="../classes-and-objects/index.html"><strong aria-hidden="true">4.</strong> About Classes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../classes-and-objects/classes-and-objects.html"><strong aria-hidden="true">4.1.</strong> Classes and Objects</a></li><li class="chapter-item expanded "><a href="../classes-and-objects/final-project-pong.html"><strong aria-hidden="true">4.2.</strong> Final Project: Pong</a></li></ol></li><li class="chapter-item expanded "><a href="../appendix/index.html"><strong aria-hidden="true">5.</strong> Appendix</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../appendix/git-basics.html"><strong aria-hidden="true">5.1.</strong> Git Basics</a></li><li class="chapter-item expanded "><a href="../appendix/exercises.html"><strong aria-hidden="true">5.2.</strong> More Exercises</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Code 101 With Python</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="packages-and-modules"><a class="header" href="#packages-and-modules">Packages and Modules</a></h1>
+<p>In code, <strong>packages</strong> are a collection of various files written by other people that have helpful functions you can use with in your projects. Each of these files are called <strong>modules</strong>. Packages and modules are made by other people and you add them to your code by typing their name. This is known as <em>importing a module</em>.</p>
+<p>Let’s use our number guessing game from last week as an example. Looking at our code, we could improve it by adding a feature that makes <code>correct_number</code> completely random each time you play the game. We can do this with a module. Let’s use the module <code>random.</code> This is a module that generates random numbers. By typing <code>import</code> and then the module name, I am now able to access the various functions in the module and use them in my code:</p>
+<pre><code class="language-py">import random
+</code></pre>
+<p>The <code>random</code> module has a function called <code>randint()</code> that we can use to generate a random integer for us. Now, the parameters that the <code>randint()</code> function accepts are a range to use for generating the random number: the first number represents the lower range and the second number represents the upper range. For example, if I put <code>random.randint(1, 100)</code>, it will generate a number between 1 and 100.</p>
+<pre><code class="language-py">import random
+correct_number = random.randint(1, 100)
+# As you can see, we're using the
+# random.randint(lower_num, higher_num) structure above.
+print(correct_number)
+</code></pre>
+<p><img src="./assets/amongus.png" alt="" /></p>
+<p>Now, if we play through the game again, you will see that the numbers generated are completely random.</p>
+<p><img src="./assets/redsus.png" alt="" /></p>
+<p>A good way to find out what you can do with a module is searching up the name of the module online and finding information on <a href="https://stackoveflow.com">StackOverflow</a> or directly from the module's documentation. Here are some useful functions from the <code>random</code> module's documentation that you can play around with:</p>
+<pre><code class="language-py">&gt;&gt;&gt; random()  # Generates random float (decimal number)
+0.37444887175646646
+
+&gt;&gt;&gt; uniform(2.5, 10.0)  # Generates random float between a lower_number and an upper_number
+3.1800146073117523
+
+&gt;&gt;&gt; randrange(10)  # Generates integer from 0 to 9 inclusive
+7
+
+&gt;&gt;&gt; choice(['win', 'lose', 'draw'])  # Returns a random element from a list
+'draw'
+</code></pre>
+<p>So far, you've imported the <code>random</code> module into your code and started using it. But you might be asking, “where did this module come from?”. Well, the <code>random</code> module is from the Python Standard Library, also known as <code>stdlib</code>, which is a set of modules that come with Python and that can be used without installing anything else on your computer. If you want to use a third-party module not officially sponsored by Python, though, you have to install its package first manually.</p>
+<h2 id="virtual-environments"><a class="header" href="#virtual-environments">Virtual Environments</a></h2>
+<p>Before we install a third-party package, though, we need to make a <strong>virtual environment</strong>, also known as a <code>venv</code>.</p>
+<h3 id="what-is-a-venv"><a class="header" href="#what-is-a-venv">What is a <code>venv</code>?</a></h3>
+<p>In Python, virtual environments are spaces where various Python-related programs can be installed, without modifying your main Python installation. The programs are instead stored in a different folder, and you can tell Python to use this virtual environment folder instead of your system-wide environment using special commands.</p>
+<h3 id="why-are-venvs-important"><a class="header" href="#why-are-venvs-important">Why are <code>venv</code>s important?</a></h3>
+<p>When you're working on Python projects, you may install various programs, such as a few third-party packages or separate, specific versions of Python. If you install these programs using your on Therefore, if you install all your programs in your terminal into your main, system-wide Python environment, programs may start to interfere with each other. It also becomes difficult to keep track of what programs are relevant to a specific project. Therefore, for each Python project you work on, you should create a virtual environment to install the necessary packages and programs in.</p>
+<h3 id="so-how-do-i-make-a-venv"><a class="header" href="#so-how-do-i-make-a-venv">So, how do I make a <code>venv</code>?</a></h3>
+<ol>
+<li>Make a folder with your guessing game file (<code>guessing_game.py</code>).</li>
+<li>Next, inside that folder, type:</li>
+</ol>
+<pre><code class="language-bash">python3 -m venv .venv
+</code></pre>
+<p>Great! You've just made a <code>venv</code>, stored in a folder named <code>.venv</code>.</p>
+<ol start="3">
+<li>Activate your <code>venv</code> by typing:</li>
+</ol>
+<pre><code class="language-bash">source .venv/bin/activate
+</code></pre>
+<p>Now, you're all set to install packages and programs for your project. If you wanted to turn off your <code>venv</code>, simply type:</p>
+<pre><code class="language-bash">deactivate
+</code></pre>
+<p>However, don't deactivate your <code>venv</code> just yet; you'll be installing a package to help spruce up your guessing game project.</p>
+<h2 id="installing-packages"><a class="header" href="#installing-packages">Installing Packages</a></h2>
+<p>Now that you have a <code>venv</code> up and running, let’s install the third-party <code>art</code> package to display a few graphics in the terminal for our guessing game. In most languages, there is usually a <strong>package manager</strong> to help you install and manage packages for that language. Python's official package manager is known as <code>pip</code>. So, to install the <code>art</code> package with <code>pip</code>, type the following into your terminal:</p>
+<pre><code class="language-bash">python3 -m pip install art
+</code></pre>
+<p>Your terminal should look something like the below</p>
+<p><img src="./assets/art-install-process.png" alt="" /></p>
+<p>Once that’s done, you can access specific modules in art by adding the following to the top of your Python file:</p>
+<pre><code class="language-py">from art import art, tprint
+</code></pre>
+<p>Here, I’m referring to the <code>art</code> package (<code>from art</code>) and importing the <code>art</code> and <code>tprint</code> modules from it (<code>import art, tprint</code>). After we've done this, we can now access the <code>tprint</code> and <code>art</code> modules in the art package and use them in our code.</p>
+<p>One function that is pretty useful is the <code>tprint()</code> function. Using <code>tprint()</code>, you can display text in your terminal and choose what font you want your text to be printed as. <code>tprint()</code> accepts two parameters: a string of text to print fancily, and a font name:</p>
+<pre><code class="language-py">tprint(&quot;Welcome to my game!&quot;, font=&quot;bulbhead&quot;)
+</code></pre>
+<p>If you add this above the <code>while</code> loop in your guessing game code and then run the Python file again, you will see your message:</p>
+<p><img src="assets/bulb.png" alt="" /></p>
+<p>Another useful function is the <code>art()</code> function, which prints out an emoticon in your terminal. This function also accepts 2 parameters: an emoji name as a string, as well as a number for how many to display. For example, here is a single coffee emoji:</p>
+<pre><code class="language-py">emoticons = art(&quot;coffee&quot;)
+print(emoticons)
+</code></pre>
+<p><img src="assets/joe1.png" alt="" /></p>
+<p>If I wanted to have 2 coffee emojis next to each other, I can also put in 2 as a second parameter in the art() function.</p>
+<pre><code class="language-py">emoticons = art(&quot;coffee&quot;, 2)
+print(emoticons)
+</code></pre>
+<p><img src="assets/joe.png" alt="" /></p>
+<blockquote>
+<p>📖 You can read more about the <code>art</code> module <a href="https://github.com/sepandhaghighi/art/blob/master/README.md#usage">here</a>.</p>
+</blockquote>
+<p>And that's how you use packages, modules, and their functions in Python. Up next, a project!</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../basic-development/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../basic-development/project-hyperm.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../basic-development/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../basic-development/project-hyperm.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
