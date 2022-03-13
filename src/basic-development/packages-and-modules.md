@@ -18,11 +18,11 @@ correct_number = random.randint(1, 100)
 print(correct_number)
 ```
 
-![](./assets/kaskdas.png)
+![](./assets/amongus.png)
 
 Now, if we play through the game again, you will see that the numbers generated are completely random.
 
-![](./assets/example.png)
+![](./assets/redsus.png)
 
 A good way to find out what you can do with a module is searching up the name of the module online and finding information on [StackOverflow](https://stackoveflow.com) or directly from the module's documentation. Here are some useful functions from the `random` module's documentation that you can play around with:
 
